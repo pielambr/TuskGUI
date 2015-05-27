@@ -39,5 +39,5 @@ ipc.on('checkLogin', function() {
 });
 
 ipc.on('showLogin', function() {
-
+  mainWindow.loadUrl('file://' + __dirname + '/../browser/login/html/login.html');
 });

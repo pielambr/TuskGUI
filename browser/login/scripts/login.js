@@ -5,7 +5,7 @@ loginApp.controller('loginController', function($scope, $http) {
     $scope.loginData = {};
     $scope.submitLogin = function(login) {
       $http.post(constants.TUSK_ROOT + constants.SESSION_ENDPOINT,
-      login).
+      {username: $scope.username, password: $scope.password}).
       success(function(data) {
 
       }).
@@ -19,7 +19,7 @@ loginApp.controller('registerController', function($scope, $http) {
     $scope.registerData = {};
     $scope.submitRegister = function(register) {
       $http.post(constants.TUSK_ROOT + constants.USER_ENDPOINT,
-      register).
+      {username: $scope.username, password: $scope.password, email: $scope.email}).
       success(function(data) {
 
       }).

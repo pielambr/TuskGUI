@@ -11,6 +11,7 @@
 
 * {
   font-family: 'Lato';
+
 }
 
 /* CSS for all elements */
@@ -18,7 +19,7 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding 0;
+  padding: 0;
 }
 
 .error {
@@ -29,6 +30,17 @@ html, body {
 #tusk_logo {
   width: 512px;
   height: 512px;
+}
+
+/* Login CSS */
+#login {
+  vertical-align: top;
+  display: inline-block;
+}
+
+#register {
+  vertical-align: top;
+  display: inline-block;
 }
 
 /* Helper classes */
@@ -42,4 +54,8 @@ html, body {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.form input {
+  display: block;
 }
