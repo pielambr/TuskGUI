@@ -1,5 +1,7 @@
 var angular = require('angular');
-var constants = require('../../../app/constants');
+var $ = require('jquery');
+var constants = require('../../app/constants');
+var errors = require('../../app/errors');
 var loginApp = angular.module('loginApp', []);
 loginApp.controller('loginController', function($scope, $http) {
     $scope.loginData = {};
@@ -7,7 +9,8 @@ loginApp.controller('loginController', function($scope, $http) {
       $http.post(constants.TUSK_ROOT + constants.SESSION_ENDPOINT,
       {username: $scope.username, password: $scope.password}).
       success(function(data) {
-
+        localStorage["username"] = $scope.username;
+        localStorage["session"] = data.session;
       }).
       error(function(data) {
 
@@ -24,7 +27,11 @@ loginApp.controller('registerController', function($scope, $http) {
 
       }).
       error(function(data) {
+        if(data.error = errors.USERNAME_TAKEN) {
 
+        } else {
+
+        }
       });
     };
   });

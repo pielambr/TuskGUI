@@ -6,9 +6,8 @@ $(document).ready(function() {
   logo = $("#tusk_logo");
   animateLogo();
   setTimeout(function() {
-    if(localStorage.getItem("username") && localStorage.getItem("password")){
-      ipc.send('checkLogin');
-      logo.insertAfter($("<p>").text("Checking login..."));
+    if(localStorage.getItem("username") && localStorage.getItem("session")){
+      checkLogin();
     } else {
       ipc.send('showLogin');
     }
@@ -19,4 +18,8 @@ function animateLogo() {
   logo.animate({opacity: 0.25}, 2000).animate({opacity: 1}, 2000, function() {
     animateLogo();
   });
-}
+};
+
+function checkLogin() {
+  $("#status").text("Checking login...");
+};

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tusk | Login</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/tusk.css">
+    <script type="text/javascript" src="login.js"></script>
+</head>
+    <body ng-app="loginApp">
+      <div id="wrapper" class="center">
+        <div id="login" ng-controller="loginController">
+          <h1>Login</h1>
+          <form class="form" name="login_form" novalidate>
+            <div class="error">
+              <span ng-show="login_form.username.$error.required">
+                We need you to fill in a username!
+              </span>
+              <span ng-show="login_form.password.$error.required">
+                We need you to fill in a password!
+              </span>
+            </div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" ng-model="username" required>
+            <label for="login_password">Password</label>
+            <input type="password" id="password" name="password" ng-model="password" required>
+            <input type="submit" value="Login"
+            ng-click="submitLogin()" ng-disabled="login_form.$invalid">
+          </form>
+        </div>
+        <div id="register" ng-controller="registerController">
+          <form class="form" name="register_form" novalidate>
+            <h1>Register</h1>
+            <div class="error">
+              <span ng-show="register_form.username.$error.minlength">
+                Your username should be between 3 and 50 characters!
+              </span>
+              <span ng-show="register_form.username.$error.maxlength">
+                Your username should be between 3 and 50 characters!
+              </span>
+              <span ng-show="register_form.username.$error.required">
+                We need you to fill in a username!
+              </span>
+              <span ng-show="register_form.password.$error.minlength">
+                Your password should be between 8 and 50 characters!
+              </span>
+              <span ng-show="register_form.password.$error.maxlength">
+                Your password should be between 8 and 50 characters!
+              </span>
+              <span ng-show="register_form.password.$error.required">
+                We need you to fill in a password!
+              </span>
+              <span ng-show="register_form.email.$error.minlength">
+                Your email should be between 5 and 50 characters!
+              </span>
+              <span ng-show="register_form.email.$error.maxlength">
+                Your email should be between 5 and 50 characters!
+              </span>
+              <span ng-show="register_form.email.$error.required">
+                We need you to fill in an email address!
+              </span>
+              <span ng-show="register_form.email.$error.email">
+                We need you to fill in a valid email address!
+              </span>
+            </div>
+            <label for="username">Username</label>
+            <input type="text" id="username" ng-model="username" name="username"
+            ng-minlength="3" ng-maxlength="50" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" ng-model="password" name="password"
+            ng-minlength="8" ng-maxlength="50" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" ng-model="email" name="email"
+            ng-minlength="5" ng-maxlength="50" required>
+            <input type="submit" value="Register"
+            ng-click="submitRegister(register)" ng-disabled="register_form.$invalid">
+          </form>
+        </div>
+      </div>
+    </body>
+</html>

@@ -19,7 +19,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 800, height: 600});
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/../browser/splash/html/splash.html');
+  mainWindow.loadUrl('file://' + __dirname + '/../browser/splash/splash.html');
 
   // Open the devtools.
   mainWindow.openDevTools();
@@ -33,11 +33,6 @@ app.on('ready', function() {
   });
 });
 
-// IPC events
-ipc.on('checkLogin', function() {
-
-});
-
 ipc.on('showLogin', function() {
-  mainWindow.loadUrl('file://' + __dirname + '/../browser/login/html/login.html');
+  mainWindow.loadUrl('file://' + __dirname + '/../browser/login/login.html');
 });
