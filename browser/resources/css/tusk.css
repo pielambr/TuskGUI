@@ -14,19 +14,12 @@
 }
 
 /* CSS for all elements */
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 .error {
   color: red;
   font-weight: bold;
 }
 
-.error span {
+.alert span {
   display: block;
 }
 
@@ -34,27 +27,39 @@ html, body {
   background-color: #E67E22;
 }
 
+.row {
+  margin: 0;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 /* Landing CSS */
 #tusk_logo {
+  position: absolute;
+  left: calc(50% - 256px);
+  top: calc(50% - 256px);
   width: 512px;
   height: 512px;
 }
 
 /* Login CSS */
 #login {
-  float: left;
   vertical-align: top;
   display: inline-block;
 }
 
 #register {
-  float: right;
   vertical-align: top;
   display: inline-block;
 }
 
-#wrapper {
-  width: 80%;
+#nav_login li {
+  list-style: none;
 }
 
 /* Helper classes */
@@ -67,12 +72,15 @@ html, body {
   text-align: center;
 }
 
-.center-vertical {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .form input {
   display: block;
+}
+
+/* Extra classes for Kickstart */
+.growl.growl-error,.growl.growl-red{
+	background-color:#CA3518
+}
+
+.growl.growl-green,.growl.growl-success{
+	background-color:#58AA00
 }

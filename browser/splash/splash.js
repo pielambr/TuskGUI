@@ -3,7 +3,7 @@ var ipc = require('ipc');
 
 var logo;
 $(document).ready(function() {
-  logo = $("#tusk_logo");
+  logo = $("#tusk_logo img");
   animateLogo();
   setTimeout(function() {
     if(localStorage.getItem("username") && localStorage.getItem("session")){

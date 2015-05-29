@@ -36,3 +36,7 @@ app.on('ready', function() {
 ipc.on('showLogin', function() {
   mainWindow.loadUrl('file://' + __dirname + '/../browser/login/login.html');
 });
+
+ipc.on('showMessages', function() {
+  mainWindow.loadUrl('file://' + __dirname + '/../browser/messages/messages.html');
+});
