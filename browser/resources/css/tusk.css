@@ -62,6 +62,23 @@
   list-style: none;
 }
 
+/* Messages CSS */
+#sidebar {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 34px;
+  bottom: 0;
+}
+
+#content {
+  position: absolute;
+  right: 0;
+  top: 34px;
+  bottom: 0;
+  left: 200px;
+}
+
 /* Helper classes */
 .center {
   margin-left: auto;
